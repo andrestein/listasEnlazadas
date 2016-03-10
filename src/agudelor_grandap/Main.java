@@ -9,7 +9,7 @@ package agudelor_grandap;
  *
  * @author audoban
  */
-public class AgudeloR_GrandaP {
+public class Main {
 
     /**
      * @param args the command line arguments

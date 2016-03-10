@@ -9,12 +9,26 @@ package agudelor_grandap;
  *
  * @author audoban
  */
-public class DoublyLinkedList implements List<E> {
+public class DoublyLinkedList<E> implements List<E> {
     
     private DoublyLinkedNode<E> front;
 
+    public DoublyLinkedList() {
+    }
+    
     @Override
-    public void add(E target) {
+    public void add(E target) throws NullPointerException {
+        if ( target == null ) 
+            throw new NullPointerException();
+        
+        DoublyLinkedNode<E> node = front; 
+        while (front.getNext() != null) {
+            front = front.getNext();
+        }
+        
+        DoublyLinkedNode<E> next = new DoublyLinkedNode<>(target);
+        next.setPrevius(node);
+        node.setNext(next);
     }
 
     @Override

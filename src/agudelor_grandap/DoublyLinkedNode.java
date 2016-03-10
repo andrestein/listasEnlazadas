@@ -71,7 +71,4 @@ public class DoublyLinkedNode<E> {
         this.previus = previus;
     }
     
-    
-    
-    
 }
