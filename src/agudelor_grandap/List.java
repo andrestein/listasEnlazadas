@@ -11,11 +11,19 @@ package agudelor_grandap;
  */
 public interface List<E> {
     
-    void add(E object);
+    void add(E target);
     
-    boolean contains(E object);
+    boolean contains(E target);
     
     E get(int index);
     
+    boolean isEmpty();
     
+    E remove(int index);
+    
+    boolean remove(E target);
+    
+    void set(int index, E target);
+    
+    int size();
 }
