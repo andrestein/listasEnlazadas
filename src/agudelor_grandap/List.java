@@ -23,7 +23,7 @@ public interface List<E> {
     
     boolean remove(E target);
     
-    void set(int index, E target);
+    void add(int index, E target);
     
     int size();
 }

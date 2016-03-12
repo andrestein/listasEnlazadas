@@ -55,8 +55,17 @@ public class DoublyLinkedList<E> implements List<E> {
 
     @Override
     public E get(int index) {
-        DoublyLinkedNode<E> node = front;
-        
+        int cont = 0;
+        for(DoublyLinkedNode<E> node = front;
+                node != null;
+                node = node.getNext()){
+            if(index == cont){
+                return (E) node;
+            }else{
+                cont++;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -66,7 +75,19 @@ public class DoublyLinkedList<E> implements List<E> {
 
     @Override
     public E remove(int index) {
-        
+        int cont =0;
+        for(DoublyLinkedNode<E> node = front;
+                node != null;
+                node = node.getNext()){
+            if(index== cont){
+                node.setNext(node.getNext());
+                node = node.getPrevious();                
+                return (E) node;
+            }else{
+                cont++;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -93,12 +114,21 @@ public class DoublyLinkedList<E> implements List<E> {
     }
 
     @Override
-    public void set(int index, E target) {
+    public void add(int index, E target) {
+        int cont=0;    
+        for(DoublyLinkedNode<E> node = front;
+                node != null;
+                node = node.getNext()){
+            if(index == cont){
+                node.setNext(node);
+                node = (DoublyLinkedNode<E>) target;                
+            }else{
+                cont++;
+            }
+        }
     }
 
     @Override
     public int size() {
     }
-    
-    
 }
