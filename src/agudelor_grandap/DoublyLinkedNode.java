@@ -15,18 +15,16 @@ public class DoublyLinkedNode<E> {
     
     private E item;
     private DoublyLinkedNode<E> next;
-    private DoublyLinkedNode<E> previus;
+    private DoublyLinkedNode<E> previous;
     
     public DoublyLinkedNode(E item) {
         this.item = item;
-        this.next = next;
-        this.previus = previus;
     }
     
-    public DoublyLinkedNode (E item,DoublyLinkedNode<E> nex,DoublyLinkedNode<E> previus){
+    public DoublyLinkedNode (E item, DoublyLinkedNode<E> next, DoublyLinkedNode<E> previous){
         this.item = item;
         this.next = next;
-        this.previus = previus;
+        this.previous = previous;
     }
 
     /**
@@ -58,17 +56,17 @@ public class DoublyLinkedNode<E> {
     }
 
     /**
-     * @return the previus
+     * @return the previous
      */
-    public DoublyLinkedNode<E> getPrevius() {
-        return previus;
+    public DoublyLinkedNode<E> getPrevious() {
+        return previous;
     }
 
     /**
-     * @param previus the previus to set
+     * @param previus the previous to set
      */
-    public void setPrevius(DoublyLinkedNode<E> previus) {
-        this.previus = previus;
+    public void setPrevious(DoublyLinkedNode<E> previus) {
+        this.previous = previus;
     }
     
 }

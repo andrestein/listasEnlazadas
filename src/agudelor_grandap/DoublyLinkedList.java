@@ -5,6 +5,8 @@
  */
 package agudelor_grandap;
 
+import javax.naming.SizeLimitExceededException;
+
 /**
  *
  * @author audoban
@@ -21,34 +23,73 @@ public class DoublyLinkedList<E> implements List<E> {
         if ( target == null ) 
             throw new NullPointerException();
         
-        DoublyLinkedNode<E> node = front; 
-        while (front.getNext() != null) {
-            front = front.getNext();
+        if ( front == null ) {
+            front = new DoublyLinkedNode<>(target);
+            return;
         }
         
-        DoublyLinkedNode<E> next = new DoublyLinkedNode<>(target);
-        next.setPrevius(node);
-        node.setNext(next);
+        DoublyLinkedNode<E> last = front; 
+        while (last.getNext() != null) {
+            last = last.getNext();
+        }
+        
+        // Ligo, El nuevo nodo con el ultimo de la lista
+        //                                          [target, next, prev]
+        DoublyLinkedNode<E> next = new DoublyLinkedNode<>(target, null, last);
+        // Ahora el penultimo nodo apuntara al nuevo nodo
+        // que sera el ultimo
+        last.setNext(next);
     }
 
     @Override
     public boolean contains(E target) {
+        for ( DoublyLinkedNode<E> node = front
+                ; node != null 
+                ; node = node.getNext() )
+        {
+            if ( node.getItem().equals(target) ) 
+                return true;
+        }
+        return false;
     }
 
     @Override
     public E get(int index) {
+        DoublyLinkedNode<E> node = front;
+        
     }
 
     @Override
     public boolean isEmpty() {
+        return front == null;
     }
 
     @Override
     public E remove(int index) {
+        
     }
 
     @Override
     public boolean remove(E target) {
+        for ( DoublyLinkedNode<E> node = front
+                ; node != null 
+                ; node = node.getNext() )
+        {
+            
+            if ( node.getItem().equals(target) ) {
+                
+                if ( node.getNext() == null ) {
+                    node.getPrevious().setNext(null);
+                } else {
+                    // [ nodo anterior ] -> [ nodo siguiente ]
+                    node.getPrevious().setNext(node.getNext());
+                    // [ nodo anterior ] <- [ nodo siguiente ]
+                    node.getNext().setPrevious(node.getPrevious());
+                }
+                return true;
+            }
+        } // Pablo: 316 822 8551
+        return false;
     }
 
     @Override
