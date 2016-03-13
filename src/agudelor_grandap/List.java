@@ -7,27 +7,30 @@ package agudelor_grandap;
 
 /**
  *
- * @author audoban
+ * @author Johan Smith
+ * @author Andres Granda
+ * @param <E>
  */
 public interface List<E> {
-    
-    void add(E target);
-    
-    boolean contains(E target);
-    
-    E get(int index);
-    
-    void set(int index, E target);
-    
+
+    void add( E target );
+
+    boolean contains( E target );
+
+    E get( int index );
+
+    void set( int index, E target );
+
     boolean isEmpty();
-    
-    E remove(int index);
-    
-    boolean remove(E target);
-    
-    void add(int index, E target);
-    
+
+    E remove( int index );
+
+    boolean remove( E target );
+
+    void add( int index, E target );
+
     int size();
-    
+
     void reverse();
+
 }

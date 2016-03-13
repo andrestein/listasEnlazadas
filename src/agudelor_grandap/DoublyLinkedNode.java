@@ -7,21 +7,21 @@ package agudelor_grandap;
 
 /**
  *
- * @author LENOVO
+ * @author Johan Smith
+ * @author Andres Granda
  * @param <E>
  */
 public class DoublyLinkedNode<E> {
-    
-    
+
     private E item;
     private DoublyLinkedNode<E> next;
     private DoublyLinkedNode<E> previous;
-    
-    public DoublyLinkedNode(E item) {
+
+    public DoublyLinkedNode( E item ) {
         this.item = item;
     }
-    
-    public DoublyLinkedNode(E item, DoublyLinkedNode<E> next, DoublyLinkedNode<E> previous){
+
+    public DoublyLinkedNode( E item, DoublyLinkedNode<E> next, DoublyLinkedNode<E> previous ) {
         this.item = item;
         this.next = next;
         this.previous = previous;
@@ -37,7 +37,7 @@ public class DoublyLinkedNode<E> {
     /**
      * @param item the item to set
      */
-    public void setItem(E item) {
+    public void setItem( E item ) {
         this.item = item;
     }
 
@@ -51,7 +51,7 @@ public class DoublyLinkedNode<E> {
     /**
      * @param next the next to set
      */
-    public void setNext(DoublyLinkedNode<E> next) {
+    public void setNext( DoublyLinkedNode<E> next ) {
         this.next = next;
     }
 
@@ -65,8 +65,8 @@ public class DoublyLinkedNode<E> {
     /**
      * @param previous the previous to set
      */
-    public void setPrevious(DoublyLinkedNode<E> previous) {
+    public void setPrevious( DoublyLinkedNode<E> previous ) {
         this.previous = previous;
     }
-    
+
 }
