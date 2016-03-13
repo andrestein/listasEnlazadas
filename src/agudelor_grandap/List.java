@@ -17,6 +17,8 @@ public interface List<E> {
     
     E get(int index);
     
+    void set(int index, E target);
+    
     boolean isEmpty();
     
     E remove(int index);
@@ -26,4 +28,6 @@ public interface List<E> {
     void add(int index, E target);
     
     int size();
+    
+    void reverse();
 }
