@@ -28,7 +28,7 @@ public class Main {
         printList(list);
         list.reverse();
         
-        System.out.println("\nsize: " + list.size() + " str.size:" + str.length());
+        print("\nsize: " + list.size() + " str.size:" + str.length());
         list.remove( new Character('E'));
         list.remove( new Character('.'));
         list.remove( new Character('('));
@@ -57,7 +57,7 @@ public class Main {
         str = list.get(0).toString() + " ";
         str += list.get(list.size() - 1).toString() + " ";
         str += list.get(7);
-        System.out.println(str);
+        print(str);
         
         list.add(0, '!');
         print("contains c:" + list.contains('c'));
@@ -65,7 +65,11 @@ public class Main {
         print("contains ?:" + list.contains('?'));
         print("contains ?:" + list.contains('0'));
         
-        
+        while ( list.size() != 0 ) {
+            list.remove( (list.size() - 1) / 2 );
+        }
+        print("\nsize: " + list.size() + " str.size:" + str.length());
+
     }
     
     public static void printList(List list) {
