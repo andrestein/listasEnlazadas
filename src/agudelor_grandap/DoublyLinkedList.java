@@ -85,6 +85,7 @@ public class DoublyLinkedList<E> implements List<E> {
                     node.getPrevious().setNext(node.getNext());
                     // [ nodo anterior ] <- [ nodo siguiente ]
                     node.getNext().setPrevious(node.getPrevious());
+                    // Apartir de aca que se encargue el recolector!!!
                 }
                 return true;
             }

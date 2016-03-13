@@ -21,7 +21,7 @@ public class DoublyLinkedNode<E> {
         this.item = item;
     }
     
-    public DoublyLinkedNode (E item, DoublyLinkedNode<E> next, DoublyLinkedNode<E> previous){
+    public DoublyLinkedNode(E item, DoublyLinkedNode<E> next, DoublyLinkedNode<E> previous){
         this.item = item;
         this.next = next;
         this.previous = previous;
@@ -63,10 +63,10 @@ public class DoublyLinkedNode<E> {
     }
 
     /**
-     * @param previus the previous to set
+     * @param previous the previous to set
      */
-    public void setPrevious(DoublyLinkedNode<E> previus) {
-        this.previous = previus;
+    public void setPrevious(DoublyLinkedNode<E> previous) {
+        this.previous = previous;
     }
     
 }
